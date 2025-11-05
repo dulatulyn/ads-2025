@@ -19,3 +19,5 @@ Here are my ADS (Algorithms and data structures labs) tasks solutions
 ### [lab6](./lab6/)
 
 ### [lab7](./lab7/)
+
+### [lab8](./lab8/)
