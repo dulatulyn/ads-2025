@@ -1,37 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-    int t;
-    cin >> t;
-    vector<int> v(t);
-    set<int> w;
-    for(int i = 0; i < t; i++){
-        cin >> v[i];
-        w.insert(v[i]);
-    }
+vector<int> bin_search(vector<vector<int>> v, int a){
+    left 
+}
 
-    int n , m;
-    cin >> n >> m;
-
-    unordered_map<int, pair<int, int>> pos;
-
+int main() {
+    int n; cin >> n;
+    vector<int> ans;
+    
     for(int i = 0; i < n; i++){
-        for(int j = 0; j < m; j++){
-            int k;
-            cin >> k;
-            if(w.count(k)){
-                pos[k] = {i, j};
-            }
+        int m; cin >> m;
+        ans.push_back(m);
+    }
+    
+    int h, w; cin >> h >> w;
+    vecto<vector<int>> v;
+    
+    for(int i = 0; i < h; i++){
+        for(int j = 0; j < w; j++){
+            int m; cin >> m;
+            v[i][j] = m;
         }
     }
 
-    for(int i : v){
-        if(pos.count(i)){
-            cout << pos[i].first << " " << pos[i].second << endl;
-        } else {
-            cout << -1 << endl;
-        }
-    }
-    return 0;
 }

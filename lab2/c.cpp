@@ -1,6 +1,6 @@
 
 #include <iostream>
-// #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Node{
@@ -33,7 +33,8 @@ int main(){
         cout << temp->val << " ";
         temp = temp->next->next;
     }
-    cout << temp->val;
+    if(temp)cout << temp->val;
+    
     
 
     return 0;
