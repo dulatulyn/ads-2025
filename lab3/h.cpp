@@ -2,35 +2,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> v;
+vector<int> sizes;
 
-int accum(int r){
-    int sum = 0;
-    for(int i = 0; i < r; i++){
-        sum += v[i];
-    }
-    return sum;
-}
-
-int main(){
-    int n, b; cin >> n >> b;
+int main() {
+    int n, m; cin >> n >> m;
     
     for(int i = 0; i < n; i++){
-        int m; cin >> m;
-        v.push_back(m);
+        int size; cin >> size;
+        sizes.push_back(size);
     }
+
+    vector<int> end_lines(n);
+    end_lines[0] = sizes[0];
     
-    for(int i = 0; i < b; i++){
-        int bug; cin >> bug;
-        int left = 0, right = v.size() - 1, mid;
-       
+    for (int i = 1; i < n; i++) {
+        end_lines[i] = end_lines[i - 1] + sizes[i];
+    }
+
+    for(int i = 0; i < m; i++){
+        int line; cin >> line;
+        
+        int left = 0, right = n - 1, mid;
+        
         while(left <= right){
             mid = left + (right - left) / 2;
-            int sum = accum(mid);
             
-            if (sum <= bug && (sum + v[mid] >= bug)) {
-                break;
-            } else if(sum > bug) {
+            if (end_lines[mid] >= line) {
+                if (mid == 0 || end_lines[mid - 1] < line) {
+                    break;
+                }
                 right = mid - 1;
             } else {
                 left = mid + 1;
@@ -39,5 +39,6 @@ int main(){
         
         cout << mid + 1 << endl;
     }
+    
     return 0;
 }

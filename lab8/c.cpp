@@ -58,6 +58,7 @@ bool canCover(const string& text, const vector<string>& patterns) {
         }
     }
 
+
     int cover = 0;
     for (int i = 0; i < n; i++) {
         cover += diff[i];

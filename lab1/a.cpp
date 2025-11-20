@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <iostream>
+#include <deque>
 using namespace std;
 
 int main() {
@@ -19,7 +21,11 @@ int main() {
                 c--;
             }
         }
-        for(int x : dq) cout << x << " ";
+        // for(int x : dq) cout << x << " ";
+        while(!dq.empty()){
+            cout << dq.front() << " ";
+            dq.pop_front();
+        }
         cout << endl;
     }
     return 0;
